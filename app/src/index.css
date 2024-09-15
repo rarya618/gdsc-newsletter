@@ -1,11 +1,12 @@
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Product Sans', system-ui, Arial;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #ffffff;
+  color: #213547;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,10 +17,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-}
