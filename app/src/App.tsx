@@ -142,7 +142,7 @@ function App() {
 
   return (
     <div className='w-screen min-h-screen flex select-none'>
-      <div className='w-full bg-white fixed z-10'>
+      <div className='w-full bg-white fixed z-50'>
         <Link to='/'>
           <img src={logo} className='h-14 mx-4 my-3' />
         </Link>
