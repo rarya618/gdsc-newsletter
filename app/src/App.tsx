@@ -1,5 +1,9 @@
 import { Route, Routes } from 'react-router'
 import logo from './assets/logo.png'
+import mobileLogo from './assets/mobileLogo.png'
+import headerGraphic from './assets/headerGraphic.png'
+
+import './App.css'
 
 import Home from './views/Home'
 import ContentGenerator from './components/ContentGenerator'
@@ -141,30 +145,52 @@ const privacyPolicy: Content = {
 function App() {
 
   return (
-    <div className='w-screen min-h-screen flex select-none'>
-      <div className='w-full bg-white fixed z-50'>
-        <Link to='/'>
-          <img src={logo} className='h-14 mx-4 my-3' />
-        </Link>
+    <div className='w-screen h-screen flex select-none overflow-hidden bg-white dark:bg-neutral-900'>
+      {/* text */}
+      <div className='w-full mx-0 fixed z-50'>
+        <div className='flex justify-between mx-10 my-5 py-0.5 rounded-xl bg-gray-100 dark:bg-neutral-800'>
+          <Link to='/'>
+            <img src={mobileLogo} className='block md:hidden h-6 mx-4 my-7' />
+            <img src={logo} className='hidden md:block h-14 mx-4 my-3' />
+          </Link>
+          <img src={headerGraphic} className='h-20 mr-4 my-0' />
+        </div>
       </div>
-			<Routes>
-        <Route 
-          index 
-          element={<Home />}
-        />
-        <Route 
-          path="newsletter" 
-          element={<Home />}
-        />
-        <Route 
-          path="terms-of-service" 
-          element={<ContentGenerator content={termsOfService} />}
-        />
-        <Route 
-          path="privacy-policy" 
-          element={<ContentGenerator content={privacyPolicy} />}
-        />
-      </Routes>
+      {/* routes */}
+      <div className='my-0 flex w-full relative overflow-scroll z-10'>
+        <Routes>
+          <Route 
+            index 
+            element={<Home />}
+          />
+          <Route 
+            path="newsletter" 
+            element={<Home />}
+          />
+          <Route 
+            path="terms-of-service" 
+            element={<ContentGenerator content={termsOfService} />}
+          />
+          <Route 
+            path="privacy-policy" 
+            element={<ContentGenerator content={privacyPolicy} />}
+          />
+        </Routes>
+      </div>
+      {/* right design */}
+      <div className='fixed rightFix z-0'>
+        <div className="bg-google-yellow w-8 h-8 rounded-full mx-0 my-1"></div>
+        <div className="bg-google-red w-20 h-20 rounded-full mx-3.5"></div>
+      </div>
+      {/* bottom design */}
+      <div className="fixed flex bottomFix z-0">
+        <div className="bg-google-green w-28 h-28 rounded-full"></div>
+        <div className="flex absolute bottom-10 left-20">
+          <div className="bg-google-blue w-8 h-8 rounded-full my-auto ml-3 mx-1"></div>
+          <div className="bg-google-yellow w-8 h-8 rounded-full my-auto mx-1"></div>
+          <div className="bg-google-red w-8 h-8 rounded-full my-auto mx-1"></div>
+        </div>
+      </div>
     </div>
   )
 }
